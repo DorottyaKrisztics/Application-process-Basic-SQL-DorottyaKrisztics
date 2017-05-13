@@ -1,12 +1,13 @@
 import sys
 import common_basicsql
+import queries_basicsql
 
 
-def choose():
+def choose(cursor):
     inputs = common_basicsql.get_inputs(["Please enter a number: "])
     option = inputs[0]
     if option == "1":
-        mentors_names = common_basicsql.mentors_names(cursor)
+        mentors_names = queries_basicsql.mentors_names(cursor)
     elif option == "2":
         pass
     elif option == "3":
@@ -26,7 +27,7 @@ def choose():
 
 
 def handle_menu():
-    options = ["question 1",
+    options = ["Mentor's names",
                "question 2",
                "question 3",
                "question 4",
@@ -39,14 +40,13 @@ def handle_menu():
 
 def main():
     inputs = common_basicsql.connection_data_get()
-    common_basicsql.database_connect(inputs)
+    cursor = common_basicsql.database_connect(inputs)
     while True:
         handle_menu()
         try:
-            choose()
+            choose(cursor)
         except KeyError:
             print('please choose a number from 0 to 7')
-
 
 
 if __name__ == '__main__':
