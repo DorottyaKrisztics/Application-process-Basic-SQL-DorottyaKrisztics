@@ -1,8 +1,9 @@
 import sys
 import common_basicsql
 
+
 def choose():
-    inputs = common_basicsql.get_inputs(["Please enter a number: "], "")
+    inputs = common_basicsql.get_inputs(["Please enter a number: "])
     option = inputs[0]
     if option == "1":
         mentors_names = common_basicsql.mentors_names(cursor)
@@ -37,6 +38,8 @@ def handle_menu():
 
 
 def main():
+    inputs = common_basicsql.connection_data_get()
+    common_basicsql.database_connect(inputs)
     while True:
         handle_menu()
         try:

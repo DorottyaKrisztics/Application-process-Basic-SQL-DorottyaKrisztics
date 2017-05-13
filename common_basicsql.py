@@ -2,23 +2,33 @@
 import psycopg2
 
 
-def database_connect(dbname_inp, user_inp, host_inp, password_inp):
+def connection_data_get():
 
-    connect_str = str("dbname='" + dbname_inp + "' user='" + user_inp + "' host='" + host_inp +
-                      "' password='" + password_inp + "'")
+    question_list = ["Please enter your database name:",
+                     "Please enter your user name:",
+                     "Please enter your host name:",
+                     "Please enter your password:"]
+    inputs = get_inputs(question_list)
+    return inputs
+
+
+def database_connect(inputs):
+
+    connect_str = str("dbname='" + inputs[0] + "' user='" + inputs[1] + "' host='" + inputs[2] +
+                      "' password='" + inputs[3] + "'")
     conn = psycopg2.connect(connect_str)
     conn.autocommit = True
     cursor = conn.cursor()
     return cursor
 
 
-def get_inputs(list_labels, title):
+def get_inputs(question_list):
     inputs = []
-    print(title)
-    for question in list_labels:
+    print("")
+    for question in question_list:
         user_input = input(question)
         inputs.append(user_input)
-    return inputs if len(inputs) > 1 else inputs[0]
+    return inputs
 
 
 def print_menu(title, list_options, exit_message):
