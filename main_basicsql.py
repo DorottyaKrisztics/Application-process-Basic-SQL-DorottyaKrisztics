@@ -1,19 +1,23 @@
-
+import sys
 import common_basicsql
 
 def choose():
-    inputs = get_inputs(["Please enter a number: "], "")
+    inputs = common_basicsql.get_inputs(["Please enter a number: "], "")
     option = inputs[0]
     if option == "1":
         mentors_names = common_basicsql.mentors_names(cursor)
     elif option == "2":
-
+        pass
     elif option == "3":
-
+        pass
     elif option == "4":
+        pass
     elif option == "5":
+        pass
     elif option == "6":
+        pass
     elif option == "7":
+        pass
     elif option == "0":
         sys.exit(0)
     else:
@@ -29,7 +33,7 @@ def handle_menu():
                "question 6",
                "question 7"]
 
-    print_menu("Main menu", options, "Exit program")
+    common_basicsql.print_menu("Menu", options, "Exit program")
 
 
 def main():
