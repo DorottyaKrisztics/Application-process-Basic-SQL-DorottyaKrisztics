@@ -17,7 +17,7 @@ def choose(cursor):
     elif option == "5":
         queries_basicsql.new_applicant(cursor)
     elif option == "6":
-        pass
+        queries_basicsql.jemima_phone_number(cursor)
     elif option == "7":
         pass
     elif option == "0":
@@ -32,7 +32,7 @@ def handle_menu():
                "Carol's name and phone number",
                "Another girl's name and phone number",
                "New applicant",
-               "question 6",
+               "Jemima Forman's phone number",
                "question 7"]
 
     common_basicsql.print_menu("Menu", options, "Exit program")
