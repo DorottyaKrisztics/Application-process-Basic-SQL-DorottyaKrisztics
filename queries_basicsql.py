@@ -73,3 +73,16 @@ def jemima_phone_number(cursor):
         print(row[0] + " " + row[1] + " " + row[2])
     print("")
 
+
+def remove_applicants(cursor):
+    cursor.execute("""DELETE
+                    FROM applicants
+                    WHERE email LIKE '%@mauriseu.net';""")
+
+    cursor.execute("""SELECT first_name, last_name, email FROM applicants;""")
+    rows = cursor.fetchall()
+    print("The number of parts: ", cursor.rowcount)
+    for row in rows:
+        print(row[0] + " " + row[1] + " " + row[2])
+    print("")
+
