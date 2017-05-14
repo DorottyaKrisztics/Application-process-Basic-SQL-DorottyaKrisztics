@@ -13,7 +13,7 @@ def choose(cursor):
     elif option == "3":
         queries_basicsql.carol(cursor)
     elif option == "4":
-        pass
+        queries_basicsql.another_girl(cursor)
     elif option == "5":
         pass
     elif option == "6":
@@ -29,8 +29,8 @@ def choose(cursor):
 def handle_menu():
     options = ["Mentor's names",
                "Mentor's nicknames Miskolc",
-               "Carol' name and phone number",
-               "question 4",
+               "Carol's name and phone number",
+               "Another girl's name and phone number",
                "question 5",
                "question 6",
                "question 7"]

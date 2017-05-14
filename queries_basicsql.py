@@ -32,3 +32,14 @@ def carol(cursor):
         print(row[0] + " " + row[1])
     print("")
 
+
+def another_girl(cursor):
+    cursor.execute("""SELECT first_name || ' ' || last_name
+                    AS full_name, phone_number
+                    FROM applicants
+                    WHERE email LIKE '%@adipiscingenimmi.edu';""")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row[0] + " " + row[1])
+    print("")
+
