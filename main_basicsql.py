@@ -7,9 +7,9 @@ def choose(cursor):
     inputs = common_basicsql.get_inputs(["Please enter a number: "])
     option = inputs[0]
     if option == "1":
-        mentors_names = queries_basicsql.mentors_names(cursor)
+        queries_basicsql.mentors_names(cursor)
     elif option == "2":
-        pass
+        queries_basicsql.nick_names_miskolc(cursor)
     elif option == "3":
         pass
     elif option == "4":
@@ -28,7 +28,7 @@ def choose(cursor):
 
 def handle_menu():
     options = ["Mentor's names",
-               "question 2",
+               "Mentor's nicknames Miskolc",
                "question 3",
                "question 4",
                "question 5",
