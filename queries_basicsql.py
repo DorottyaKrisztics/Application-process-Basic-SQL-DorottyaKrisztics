@@ -43,3 +43,20 @@ def another_girl(cursor):
         print(row[0] + " " + row[1])
     print("")
 
+
+def new_applicant(cursor):
+    cursor.execute("""DELETE
+                    FROM applicants
+                    WHERE  application_code='54823';""")
+    cursor.execute("""INSERT INTO applicants (first_name, last_name, phone_number, email, application_code)
+                    VALUES ('Markus', 'Schaffarzyk', '003620/725-2666', 'djnovus@groovecoverage.com', '54823');""")
+    cursor.execute("""SELECT id, first_name, last_name, phone_number, email, application_code
+                    FROM applicants
+                    WHERE  application_code='54823';""")
+
+    rows = cursor.fetchall()
+    for row in rows:
+        print(str(row[0]) + " " + row[1] + " " + row[2] + " " + row[3] + " " + row[4] + " " + str(row[5]))
+    print("")
+
+

@@ -15,7 +15,7 @@ def choose(cursor):
     elif option == "4":
         queries_basicsql.another_girl(cursor)
     elif option == "5":
-        pass
+        queries_basicsql.new_applicant(cursor)
     elif option == "6":
         pass
     elif option == "7":
@@ -31,7 +31,7 @@ def handle_menu():
                "Mentor's nicknames Miskolc",
                "Carol's name and phone number",
                "Another girl's name and phone number",
-               "question 5",
+               "New applicant",
                "question 6",
                "question 7"]
 
