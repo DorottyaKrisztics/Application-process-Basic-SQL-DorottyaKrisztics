@@ -21,3 +21,14 @@ def nick_names_miskolc(cursor):
         print(row[0])
     print("")
 
+
+def carol(cursor):
+    cursor.execute("""SELECT first_name || ' ' || last_name
+                    AS full_name, phone_number
+                    FROM applicants
+                    WHERE first_name='Carol';""")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row[0] + " " + row[1])
+    print("")
+
