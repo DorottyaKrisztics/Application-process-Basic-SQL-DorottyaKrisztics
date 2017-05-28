@@ -10,22 +10,15 @@
     <h1>{{ title }}</h1>
     <table>
         <tr>
-            <td>id</td>
-            <td colspan = "2">Mentor name</td>
-            <td>School name</td>
-            <td>School country</td>
+            <td>country</td>
+            <td>count</td>
         </tr>
-        {% for id, first_name, last_name, name, country in mentors %}
-
+        {% for country, count in country_count %}
         <tr>
-            <td> {{ id }} </td>
-            <td> {{ first_name}} </td>
-            <td> {{ last_name}} </td>
-            <td> {{ name }} </td>
             <td> {{ country }} </td>
+            <td> {{ count }} </td>
         </tr>
         {% endfor %}
     </table>
 </body>
 </html>
-

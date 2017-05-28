@@ -18,3 +18,13 @@ def all_school():
     all_school_query = datamanager.run_query(query)
     return all_school_query
 
+
+def mentors_by_country():
+    query = """SELECT schools.country, COUNT(schools.country)
+                FROM schools
+                INNER JOIN mentors ON mentors.city=schools.city
+                GROUP BY schools.country
+                ORDER BY schools.country;"""
+    mentors_by_country_query = datamanager.run_query(query)
+    return mentors_by_country_query
+

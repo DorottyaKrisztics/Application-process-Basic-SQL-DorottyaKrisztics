@@ -23,7 +23,8 @@ def all_school():
 
 @app.route('/mentors-by-country', methods=['GET'])
 def mentors_by_country():
-    pass
+    mentors_by_country_query = query_handler.mentors_by_country()
+    return render_template("mentors_by_country.html", country_count=mentors_by_country_query, title="Mentors by country")
 
 
 @app.route('/contacts', methods=['GET'])
