@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <table>
+        <tr>
+            <td>applicants id</td>
+            <td>applicants first name</td>
+            <td>application code</td>
+            <td>mentors name</td>
+        </tr>
+        {% for applicants_id, applicants_first_name, application_code, mentors_name in applicants_and_mentors %}
+        <tr>
+            <td> {{ applicants_id }} </td>
+            <td> {{ applicants_first_name }} </td>
+            <td> {{ application_code }} </td>
+            <td> {{ mentors_name }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/" class="button" style="font-size: 20px">Back to the homepage</a>
+</body>
+</html>

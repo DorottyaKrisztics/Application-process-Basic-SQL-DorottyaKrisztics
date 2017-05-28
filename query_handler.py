@@ -2,7 +2,7 @@ import datamanager
 
 
 def mentors_and_schools():
-    query = """SELECT mentors.id, mentors.first_name, mentors.last_name, schools.name, schools.country
+    query = """SELECT mentors.id, mentors.first_name || ' ' || mentors.last_name AS mentors_name, schools.name, schools.country
                 FROM mentors
                 INNER JOIN schools ON mentors.id=schools.contact_person
                 ORDER BY mentors.id;"""
@@ -11,7 +11,7 @@ def mentors_and_schools():
 
 
 def all_school():
-    query = """SELECT mentors.id, mentors.first_name, mentors.last_name, schools.name, schools.country
+    query = """SELECT mentors.id, mentors.first_name || ' ' || mentors.last_name AS mentors_name, schools.name, schools.country
                 FROM mentors
                 RIGHT JOIN schools ON mentors.id=schools.contact_person
                 ORDER BY mentors.id;"""
@@ -46,4 +46,15 @@ def applicants():
                 ORDER BY applicants_mentors.creation_date DESC;"""
     applicants_query = datamanager.run_query(query)
     return applicants_query
+
+
+def applicants_and_mentors():
+    query = """SELECT applicants.id, applicants.first_name, applicants.application_code, mentors.first_name || ' ' || mentors.last_name
+                AS mentors_name
+                FROM ((applicants_mentors
+                INNER JOIN mentors ON mentors.id=applicants_mentors.mentor_id)
+                RIGHT JOIN applicants ON applicants.id=applicants_mentors.applicant_id)
+                ORDER BY applicants.id;"""
+    applicants_and_mentors_query = datamanager.run_query(query)
+    return applicants_and_mentors_query
 

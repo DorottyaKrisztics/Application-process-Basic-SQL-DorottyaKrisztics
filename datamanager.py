@@ -18,9 +18,9 @@ def connection():
         print(exception)
 
 #  psycopg2.InterfaceError: cursor already closed
-    #finally:
-        #if connection:
-            #connection.close()
+    # finally:
+        # if connection:
+            # connection.close()
 
 
 def run_query(query):

@@ -41,7 +41,8 @@ def applicants():
 
 @app.route('/applicants-and-mentors', methods=['GET'])
 def applicants_and_mentors():
-    pass
+    applicants_and_mentors_query = query_handler.applicants_and_mentors()
+    return render_template("applicants_and_mentors.html", applicants_and_mentors=applicants_and_mentors_query, title="Applicants and mentors")
 
 
 if __name__ == '__main__':
