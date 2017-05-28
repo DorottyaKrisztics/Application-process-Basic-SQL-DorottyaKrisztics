@@ -1,0 +1,13 @@
+h1 {
+    font-size: 45px;
+}
+table {
+    border: 2px solid #000;
+    border-collapse: collapse;
+    max-width: 900px;
+}
+td, th {
+    border: 1px solid #777;
+    padding: 3px 7px;
+    text-align: left;
+}
