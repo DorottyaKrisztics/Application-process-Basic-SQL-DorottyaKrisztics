@@ -35,7 +35,8 @@ def contacts():
 
 @app.route('/applicants', methods=['GET'])
 def applicants():
-    pass
+    applicants_query = query_handler.applicants()
+    return render_template("applicants.html", applicants=applicants_query, title="Applicants")
 
 
 @app.route('/applicants-and-mentors', methods=['GET'])

@@ -37,3 +37,13 @@ def contacts():
     contacts_query = datamanager.run_query(query)
     return contacts_query
 
+
+def applicants():
+    query = """SELECT applicants.first_name, applicants.application_code, applicants_mentors.creation_date
+                FROM applicants
+                INNER JOIN applicants_mentors ON applicants.id=applicants_mentors.applicant_id
+                WHERE applicants_mentors.creation_date > '2016-01-01'
+                ORDER BY applicants_mentors.creation_date DESC;"""
+    applicants_query = datamanager.run_query(query)
+    return applicants_query
+
