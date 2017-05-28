@@ -12,13 +12,13 @@ def index():
 def mentors():
 
     mentors_query = query_handler.mentors_and_schools()
-    print(mentors_query)
     return render_template("mentors_school.html", mentors=mentors_query, title="Mentors")
 
 
 @app.route('/all-school', methods=['GET'])
 def all_school():
-    pass
+    all_school_query = query_handler.all_school()
+    return render_template("mentors_school.html", mentors=all_school_query, title="All school")
 
 
 @app.route('/mentors-by-country', methods=['GET'])
