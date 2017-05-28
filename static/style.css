@@ -11,3 +11,17 @@ td, th {
     padding: 3px 7px;
     text-align: left;
 }
+.button {
+    display: inline-block;
+    background: #99e6ff;
+    border-radius: 6px;
+    padding: 5px 7px;
+    color: #333;
+    margin: 25px 0 15px;
+    text-decoration: none;
+    border: 1px solid #555;
+}
+.button:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
