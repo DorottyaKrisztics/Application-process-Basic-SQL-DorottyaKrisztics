@@ -29,7 +29,8 @@ def mentors_by_country():
 
 @app.route('/contacts', methods=['GET'])
 def contacts():
-    pass
+    contacts_query = query_handler.contacts()
+    return render_template("contacts.html", contacts=contacts_query, title="Contacts")
 
 
 @app.route('/applicants', methods=['GET'])

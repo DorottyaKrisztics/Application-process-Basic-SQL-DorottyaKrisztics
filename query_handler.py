@@ -28,3 +28,12 @@ def mentors_by_country():
     mentors_by_country_query = datamanager.run_query(query)
     return mentors_by_country_query
 
+
+def contacts():
+    query = """SELECT schools.name, mentors.first_name || ' ' || mentors.last_name AS mentors_full_name
+                FROM mentors
+                INNER JOIN schools ON mentors.id=schools.contact_person
+                ORDER BY schools.name;"""
+    contacts_query = datamanager.run_query(query)
+    return contacts_query
+
